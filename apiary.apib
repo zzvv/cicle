@@ -1,0 +1,102 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# circle
+
+***圈子前后端接口定义***
+
+> 约束说明:
+
+    1.默认请求路径前缀为 app/v1/.......
+
+## picture [/picture]
+
+### index [GET]
+
+> 请求路径示例: app/v1/picture
+
++ Response 200 (application/json)
+
+        [
+            
+                "picture_model": [
+                    {
+                        "id": "573ae376eed94b2d39caa29a",
+                        "name": "炫个富",
+                        "edit_area": "" ,
+                        "list_pic_value" : "http://7xl0x6.com1.z0.glb.clouddn.com/CalfMoo/o_1a7i4568u1ild1r48k5019ei26o9/62.pic.jpg",
+                        "base_pic_value" : "http://7xl6fd.com1.z0.glb.clouddn.com/006964e1-92d0-4495-b26c-9d9820a4baf3.jpeg"
+                    }, {
+                         "id": "573ae376eed94b2d39caa29a",
+                        "name": "表白墙",
+                        "edit_area": "" ,
+                        "list_pic_value" : "http://7xl0x6.com1.z0.glb.clouddn.com/CalfMoo/o_1a7i4568u1ild1r48k5019ei26o9/62.pic.jpg",
+                        "base_pic_value" : "http://7xl6fd.com1.z0.glb.clouddn.com/006964e1-92d0-4495-b26c-9d9820a4baf3.jpeg"
+                    }, {
+                         "id": "573ae376eed94b2d39caa29a",
+                        "name": "各种证",
+                        "edit_area": "" ,
+                        "list_pic_value" : "http://7xl0x6.com1.z0.glb.clouddn.com/CalfMoo/o_1a7i4568u1ild1r48k5019ei26o9/62.pic.jpg",
+                        "base_pic_value" : "http://7xl6fd.com1.z0.glb.clouddn.com/006964e1-92d0-4495-b26c-9d9820a4baf3.jpeg"
+                    }, {
+                        "id": "573ae376eed94b2d39caa29a",
+                        "name": "游戏榜",
+                        "edit_area": "" ,
+                        "list_pic_value" : "http://7xl0x6.com1.z0.glb.clouddn.com/CalfMoo/o_1a7i4568u1ild1r48k5019ei26o9/62.pic.jpg",
+                        "base_pic_value" : "http://7xl6fd.com1.z0.glb.clouddn.com/006964e1-92d0-4495-b26c-9d9820a4baf3.jpeg"
+                    },{
+                        "id": "573ae376eed94b2d39caa29a",
+                        "name": "娱乐一下",
+                        "edit_area": "" ,
+                        "list_pic_value" : "http://7xl0x6.com1.z0.glb.clouddn.com/CalfMoo/o_1a7i4568u1ild1r48k5019ei26o9/62.pic.jpg",
+                        "base_pic_value" : "http://7xl6fd.com1.z0.glb.clouddn.com/006964e1-92d0-4495-b26c-9d9820a4baf3.jpeg"
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
